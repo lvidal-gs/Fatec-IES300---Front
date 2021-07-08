@@ -1,0 +1,175 @@
+@font-face {
+    font-family: Pixel-font;
+    src: url(./fonts/Minecraft.ttf)
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --primary-color: #13262F;
+    --question-area: #080f13;
+    --powers-area: #1d2529;
+    --secondary-color: #d6ac12;
+    --font-color: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, label, a, button{
+    font-family: Pixel-font;
+    color: var(--secondary-color)
+}
+
+div#root {
+    width: 100%;
+    position: relative;
+}
+
+body {
+    background: url('./assets/drawing.svg');
+    animation: none;
+    background-color: #76c9e8;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 700px) {
+    body {
+        min-width: 100vw;
+        animation: gradient 5s linear infinite alternate;
+        background: linear-gradient(45deg, #2b2895, #1a1766, #020122);
+        background-size: 600% 600%;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+    
+}
+
+.fields-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 400px;
+}
+
+.fields-area .input-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    width: 80%;
+    margin: 15px 0;
+}
+
+.button-accept {
+    padding: 1rem 2rem;
+    margin-top: 50px;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 100;
+    background-color: var(--secondary-color);
+    text-shadow: 4px 3px 0 #7A7A7A;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    transition: 70ms;
+}
+
+.button-deny {
+    padding: 1rem 2rem;
+    margin-top: 50px;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 100;
+    background-color: #9B111E;
+    text-shadow: 4px 3px 0 #7A7A7A;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    transition: 70ms;
+}
+
+.button-accept:hover {
+    background-color:  #b8930d;
+    transition: all .3s ease;  
+}
+
+.button-deny:hover{
+    background-color:  #5f0c14;
+    transition: all .3s ease;  
+}
+
+:is(.button-accept, .button-deny):active {
+    transform: translateY(5px);
+    transition: 70ms;
+}
+
+.fields-area .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fields-area .footer a, 
+.fields-area .footer .links a {
+    text-decoration: none;
+    margin: 10px;
+    font-size: 1rem;
+    color: var(--font-color);
+}
+.fields-area .footer a:hover, 
+.fields-area .footer .links a:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+
+.modal-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+.modal-container.show{
+    display: flex;
+}
+
+.modal-container.show :is(#modal-create-room, #modal-buy, #modal-join-room-container) {
+    animation: modal 0.2s;
+}
+
+#sound-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    cursor: pointer;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+
+    } to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}

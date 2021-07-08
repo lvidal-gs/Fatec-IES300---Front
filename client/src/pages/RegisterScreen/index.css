@@ -1,0 +1,122 @@
+@import '../../global.css';
+
+#register-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+#logo {
+    animation: is-upping-scale 2s ease infinite alternate;
+    max-width: 300px;
+    min-width: 300px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+#register-area {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    border: 3px solid var(--secondary-color);
+    margin: 2rem 4rem;
+    border-radius: 8px;
+    box-shadow: 0px 0px 26px -1px var(--font-color);
+}
+
+#register-area h1 {
+    font-size: 35px;
+    text-align: left;
+    padding: 2.3rem;
+    padding-bottom: 0rem;
+    color: var(--font-color);
+    text-transform: uppercase;
+}
+
+#register-area .fields-area {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    max-width: 1000px;
+    min-width: 400px;
+    flex-wrap: wrap;
+}
+
+#register-area .fields-area .input-field {
+    min-width: 280px;
+    max-width: 400px;
+    margin: 0 2rem;
+}
+
+#register-area .fields-area .input-field:nth-child(3) {
+    flex-wrap: wrap;
+    max-width: 870px;
+    min-width: 90%;
+    margin: 0;
+}
+
+#register-area h5 {
+    font-family: 'Roboto';
+    width: 20%;
+    color: rgb(110, 0, 0);
+    font-size: 12pt;
+    padding: 0.6rem;
+    margin: 0 2.3rem;
+    border-radius: 8px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    background-color: rgb(245, 186, 186);
+    display: none;
+}
+
+@media (max-width:1100px) {
+    #register-area .fields-area {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    #register-area .fields-area .input-field {
+        min-width: 280px;
+        max-width: 400px;
+        margin: 0 2rem;
+        margin-top: 1.5rem;
+    }
+
+    #register-area .fields-area .input-field:nth-child(3) {
+        min-width: 280px;
+        max-width: 400px;
+        margin: 0 2rem;
+        margin-top: 1.5rem;
+    }
+}
+
+#register-page .fields-area .footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+#register-page .fields-area .footer a{
+    font-size: 19px;
+    padding: 10px 16px;
+}
+
+@media (max-width: 900px){
+    #register-area {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    #register-area h1{
+        text-align: center;
+    }
+}
+
+@keyframes is-upping-scale {
+    to {
+        transform: scale(1.1);
+    }
+}

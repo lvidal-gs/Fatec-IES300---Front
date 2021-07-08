@@ -1,0 +1,58 @@
+.input-field {
+    width: 100%;
+    padding-top: 5%;
+    position: relative;
+}
+
+label {
+    color: var(--font-color);
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+input {
+    background: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid var(--primary2-color);
+    color: var(--font-color);
+}
+
+input::placeholder {
+    color: var(--font-color)
+}
+
+.input-field .underline::before {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    border: #fff 1px solid;
+    border-radius: 16px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    transition: all 0.6s ease-in-out;
+    transform-origin: right;
+}
+
+.input-field .underline::after {
+    content: '';
+    position: absolute;
+    background-color: var(--secondary-color);
+    border: var(--secondary-color) 1px solid;
+    border-radius: 16px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+    transform-origin: left;
+}
+
+.input-field :is(input):focus ~ .underline::after{
+    transform: scaleX(1);
+}
+
